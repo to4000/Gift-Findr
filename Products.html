@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Page</title>
+<style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+ 
+        /* Logo Styles */
+        .logo {
+            position: absolute;
+            top: 20px; /* Distance from the top of the page */
+            left: 10px; /* Distance from the left of the page */
+            max-width: 100px; /* Adjust the size of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+ 
+        /* Header Styles */
+        header {
+            background-color: #ffb6c1;
+            color: black;
+            text-align: center;
+            padding: 1em 0;
+        }
+ 
+        header h1 {
+            margin: 0;
+        }
+ 
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between links */
+            margin: 20px 0; /* Spacing around the nav */
+        }
+ 
+        nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #131113;
+            color: #ffb6c1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+ 
+        nav a:hover {
+            background-color: #ffb6c1;
+            color: #131113;
+        }
+ 
+        /* Main Content Styles */
+        main {
+            padding: 20px;
+        }
+ 
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+ 
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            padding: 15px;
+            max-width: 200px;
+            transition: box-shadow 0.3s;
+        }
+ 
+        .product:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+ 
+        .product img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+ 
+        .price {
+            font-size: 1.2em;
+            color: black;
+            margin: 10px 0;
+        }
+ 
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+ 
+        button:hover {
+            background-color: #0056b3;
+        }
+ 
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #ffb6c1;
+            color: #fff;
+            margin-top: 20px;
+        }
+</style>
+</head>
+<body>
+<header>
+<img src="logo.png" alt="Logo" class="logo" />
+<div class="container">
+<h1>Products</h1>
+</div>
+</header>
+ 
+    <!-- Centered Navigation Links -->
+<nav>
+<a href="Index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+<a href="Products.html">Our Products</a>
+</nav>
+ 
+    <main>
+<section class="products">
+<div class="product">
+<img src="529aa32c-2c82-4bab-b03c-a8c1004179d6.png" alt="Jellycat Teddy">
+<h2>Jellycat Teddy</h2>
+<p class="price">AED 59</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="20 Beautiful 26th Birthday Cakes You Can Actually Make - Its Claudia G.png" alt="Custom Cakes">
+<h2>Custom Cakes</h2>
+<p class="price">AED 95</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="Real Red Roses Glitter Bouquet _ Any Occasion.png" alt="Flower Bouquet">
+<h2>Flower Bouquet</h2>
+<p class="price">AED 200</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="Coquette bow mug🎀.png" alt="Mug">
+<h2>Coquette Mug</h2>
+<p class="price">AED 32</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="08fae8d6-6ba2-49b8-b4a1-edc533c92267.png" alt="Polaroid Camera">
+<h2>Polaroid Camera</h2>
+<p class="price">AED 132</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="𝐏𝐚𝐧𝐝𝐨𝐫𝐚 𝐒𝐚𝐧𝐫𝐢𝐨 𝐂𝐡𝐚𝐫𝐦 𝐁𝐫𝐚𝐜𝐞𝐥𝐞𝐭♡.png" alt="Bracelet">
+<h2>Bracelet</h2>
+<p class="price">AED 100</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="@jessssiicaaaa.png" alt="Lippie Set">
+<h2>Lippie Set</h2>
+<p class="price">AED 57</p>
+<button>Add to Cart</button>
+</div>
+<div class="product">
+<img src="8e78780e-75ce-4428-8dfb-1c44468d9a4d.png" alt="Bag">
+<h2>Bag</h2>
+<p class="price">AED 219</p>
+<button>Add to Cart</button>
+</div>
+</section>
+</main>
+ 
+    <footer>
+<p>© 2024 Our Products</p>
+</footer>
+</body>
+</html>

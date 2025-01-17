@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Gift Findr</title>
+<style>
+        /* General Styling */
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+ 
+        header {
+            background-color: #ffb6c1;
+            padding: 20px;
+            text-align: center;
+        }
+ 
+        header h1 {
+            margin: 0;
+            color: #333;
+        }
+ 
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #131113;
+            color: #ffb6c1;
+        }
+ 
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            max-width: 100px;
+            height: auto;
+        }
+ 
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+ 
+        main {
+            padding: 20px;
+        }
+ 
+        form {
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+ 
+        form input, form textarea, form button {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+ 
+        form button {
+            background-color: #ffb6c1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+ 
+        form button:hover {
+            background-color: #ffb6c1;
+        }
+ 
+        footer {
+            background-color: #ffb6c1;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+</style>
+ 
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+ 
+    <script>
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBjWAy8-uRAJvSrmC7hlsilPRPVsgbPJLE",
+            authDomain: "gift-findr.firebaseapp.com",
+            databaseURL: "https://gift-findr-default-rtdb.firebaseio.com",
+            projectId: "gift-findr",
+            storageBucket: "gift-findr.appspot.com",
+            messagingSenderId: "440027473577",
+            appId: "1:440027473577:web:5d4cadb597032a9d3c6bb8",
+            measurementId: "G-7BEW70FFFW"
+        };
+ 
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+ 
+        // Function to submit the form
+        function submitContactForm(event) {
+            event.preventDefault(); // Prevent page reload
+ 
+            // Get the values from the form fields
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+ 
+            // Push the data to Firebase
+            database.ref('contacts').push({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+            .then(() => {
+                alert('Thank you for your submission!');
+                document.getElementById('contactForm').reset(); // Reset the form
+            })
+            .catch((error) => {
+                alert('Error: ' + error.message);
+            });
+        }
+</script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="styles.css">
+        <header>
+            <!-- Logo positioned in the top-left corner -->
+        <img src="logo.png" alt="Logo" class="logo" />
+            <div class="container">
+                <h1>Contact Us</h1>
+              
+            </div>
+        </header>
+    </head>
+    <body>
+        <a href="Index.html">Home</a>
+        <a href="about.html">About Us</a> 
+        <a href="contact.html">Contact Us</a>
+        <a href="Products.html">Our Products</a>
+ 
+    <main>
+<h2>Send Us a Message</h2>
+<form id="contactForm" onsubmit="submitContactForm(event)">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+ 
+            <label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" required>
+ 
+            <label for="subject">Subject:</label>
+<input type="text" id="subject" name="subject" placeholder="Enter the subject" required>
+ 
+            <label for="message">Message:</label>
+<textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+ 
+            <button type="submit">Send Message</button>
+</form>
+</main>
+ 
+    <footer>
+<p>&copy; 2024 Gift Findr. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+
